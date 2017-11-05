@@ -35,16 +35,56 @@
 
 //Object.create 
 
-var personProto = {
-    calculateAge: function() {
-        console.log(2017 - this.yearOfBirth);
-    }
+// var personProto = {
+//     calculateAge: function() {
+//         console.log(2017 - this.yearOfBirth);
+//     }
+// }
+
+// var john = Object.create(personProto);
+
+// var jane = Object.create(personProto, {
+//     name: {value: 'Jane'},
+//     yearOfBirth: {value: 1069},
+//     job: {value : 'designer'}
+// });
+
+//Primative vs Objects
+
+//Primatives (values remain different)
+var a = 12;
+var b = 23; 
+
+a = 25;
+
+console.log(a);
+console.log(b);
+
+//Objects (values are the same)
+var object1 = {
+    name: "John",
+    age: 26
 }
 
-var john = Object.create(personProto);
+var object2 = object1;
+object1.age = 30;
 
-var jane = Object.create(personProto, {
-    name: {value: 'Jane'},
-    yearOfBirth: {value: 1069},
-    job: {value : 'designer'}
-});
+console.log(object1.age);
+console.log(object2.age);
+
+//Functions
+var age = 27;
+var obj = {
+    name: 'Jonas',
+    city: 'Lisbon'
+}
+
+function change(a, b) {
+    a = 30;
+    b.city = 'San Francisco';
+}
+
+change(age, obj);
+
+console.log(age);
+console.log(obj.city);
