@@ -128,28 +128,47 @@
 
 //Lecture: Functions returning functions 
 
-function interviewQuestion(job) {
-    if (job === 'designer') {
-        return function(name) {
-            console.log(name + ', can you explain what UX design is?')
-        }
-    } else if (job === 'teacher') {
-        return function(name) {
-            console.log('What subject do you teach, ' + name + '?')
-        }
-    } else {
-        return function(name) {
-            console.log('Hello ' + name + ', what do you do?');
-        }
-    }
-}
+// function interviewQuestion(job) {
+//     if (job === 'designer') {
+//         return function(name) {
+//             console.log(name + ', can you explain what UX design is?')
+//         }
+//     } else if (job === 'teacher') {
+//         return function(name) {
+//             console.log('What subject do you teach, ' + name + '?')
+//         }
+//     } else {
+//         return function(name) {
+//             console.log('Hello ' + name + ', what do you do?');
+//         }
+//     }
+// }
 
-var teacherQuestion = interviewQuestion('teacher');
+// var teacherQuestion = interviewQuestion('teacher');
 
-teacherQuestion('John');
+// teacherQuestion('John');
 
-var designerQuestion = interviewQuestion('designer');
+// var designerQuestion = interviewQuestion('designer');
 
-designerQuestion('Mary');
+// designerQuestion('Mary');
 
-interviewQuestion('idk')('Will');
+// interviewQuestion('idk')('Will');
+
+//Lecture: Immediately Invoked Function Expressions IIFE
+
+// function game() {
+//     var score = Math.random() * 10;
+//     console.log(score >= 5);
+// }
+// game();
+
+(function () {
+    var score = Math.random() * 10;
+    console.log(score >= 5);
+})();
+
+(function (goodLuck) {
+    var score = Math.random() * 10;
+    console.log(score >= 5 - goodLuck);
+})(5);
+
